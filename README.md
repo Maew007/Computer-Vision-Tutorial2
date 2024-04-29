@@ -12,28 +12,27 @@ Befor use this code
 4. source ~/catkin_ws/devel/setup.bash
 5. cd ~/catkin_ws/src/Computer_Vision_Tutorial/src
 6. Edit file planner1.py use command $nano planner1.py
-//#เริ่มต้นไฟล์
-//#นำเข้า คลังคำสั่งที่เกี่ยวข้อในการใช้งาน
-//#คลังคำสั่งที่เกี่ยวข้องกับระบบปฏิบัติการหุ่นยนต์
-import rospy
-//#คลังคำสั่งที่เกี่ยวข้องกับการประมวลผลภาพ OpenCV
-import cv2
+	#เริ่มต้นไฟล์
+	#นำเข้า คลังคำสั่งที่เกี่ยวข้อในการใช้งาน
+	#คลังคำสั่งที่เกี่ยวข้องกับระบบปฏิบัติการหุ่นยนต์
+	import rospy
+	#คลังคำสั่งที่เกี่ยวข้องกับการประมวลผลภาพ OpenCV
+	import cv2
+	#นำเข้าแบบเลือกบางฟังก์ชัน หรือตัวแปร ที่ต้องการเท่านั้น เพื่อลดจำนวนหน่วยความจำแรมที่ใช้ขณะทำงาน
+	#นำเข้าแบบเลือก ตัวแปรชื่อ Image จาก Class ชื่อ sensor_msgs.msg 
+	from sensor_msgs.msg import Image
+	#นำเข้าแบบเลือก ตัวแปรชื่อ String จาก Class ชื่อ sensor_msgs.msg
+	from std_msgs.msg import String  #ข้อพึงสังเกต ตัวแปรที่จะใช้ String จะไม่ใช่ string
+	#นำเข้าแบบเลือกบางฟังก์ชัน CvBridge() และ CvBridgeError()  
+	from cv_bridge import CvBridge, CvBridgeError
 
 
-#นำเข้าแบบเลือกบางฟังก์ชัน หรือตัวแปร ที่ต้องการเท่านั้น เพื่อลดจำนวนหน่วยความจำแรมที่ใช้ขณะทำงาน
+	#----------------------------------------------------------
 
-#นำเข้าแบบเลือก ตัวแปรชื่อ Image จาก Class ชื่อ sensor_msgs.msg 
-from sensor_msgs.msg import Image
-#นำเข้าแบบเลือก ตัวแปรชื่อ String จาก Class ชื่อ sensor_msgs.msg
-from std_msgs.msg import String  #ข้อพึงสังเกต ตัวแปรที่จะใช้ String จะไม่ใช่ string
-#นำเข้าแบบเลือกบางฟังก์ชัน CvBridge() และ CvBridgeError()  
-from cv_bridge import CvBridge, CvBridgeError
-
-
-#----------------------------------------------------------
-#------------------------  เริ่มต้น --------------------------
-# เชื่อมระบบ ประมวลผลภาพ กับระบบ ROS
-bridge = CvBridge()
+	#------------------------  เริ่มต้น --------------------------
+	
+ 	# เชื่อมระบบ ประมวลผลภาพ กับระบบ ROS
+	bridge = CvBridge()
 
 #กำหนด หัวข้อ(Topic) เพื่อกระจายคำสั่งไปยัง
 #โหนด(Node)rosrun computer_vision_pkg motor_controller
