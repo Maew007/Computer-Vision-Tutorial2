@@ -12,11 +12,11 @@ Befor use this code
 4. source ~/catkin_ws/devel/setup.bash
 5. cd ~/catkin_ws/src/Computer_Vision_Tutorial/src
 6. Edit file planner1.py use command $nano planner1.py
-   #เริ่มต้นไฟล์
-#นำเข้า คลังคำสั่งที่เกี่ยวข้อในการใช้งาน
-#คลังคำสั่งที่เกี่ยวข้องกับระบบปฏิบัติการหุ่นยนต์
+//#เริ่มต้นไฟล์
+//#นำเข้า คลังคำสั่งที่เกี่ยวข้อในการใช้งาน
+//#คลังคำสั่งที่เกี่ยวข้องกับระบบปฏิบัติการหุ่นยนต์
 import rospy
-#คลังคำสั่งที่เกี่ยวข้องกับการประมวลผลภาพ OpenCV
+//#คลังคำสั่งที่เกี่ยวข้องกับการประมวลผลภาพ OpenCV
 import cv2
 
 
